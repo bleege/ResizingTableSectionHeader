@@ -63,4 +63,8 @@ extension ViewController: UITableViewDelegate {
         return sectionHeader
     }
     
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return sectionHeader.bounds.height
+    }
+    
 }
