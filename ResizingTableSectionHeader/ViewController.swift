@@ -51,13 +51,13 @@ class ViewController: UIViewController {
     
     func expandSectionHeader() {
         
-        UIView.animate(withDuration: 1.0, animations: {
+        UIView.animate(withDuration: 1.0, delay: 0.0, usingSpringWithDamping: 0.3, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {
             self.tableView.beginUpdates()
             self.sectionHeader.headerHeightConstraint.constant = self.sectionHeader.expandedHeight
             self.view.layoutIfNeeded()
             self.tableView.endUpdates()
-        })
-        
+        }, completion: nil)
+    
     }
     
     func collapseSectionHeader() {
