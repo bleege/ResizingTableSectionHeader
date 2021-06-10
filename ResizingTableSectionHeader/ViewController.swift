@@ -99,6 +99,7 @@ extension ViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("didSelectRowAt = \(indexPath.row)")
+        tableView.deselectRow(at: indexPath, animated: false)
         toggleHeader()
     }
     
