@@ -12,6 +12,9 @@ class DynamicHeightSectionHeader: UIViewController {
     @IBOutlet weak var headerWidthConstraint: NSLayoutConstraint!
     @IBOutlet weak var headerHeightConstraint: NSLayoutConstraint!
     
+    let collapseHeight:CGFloat = 150
+    let expandedHeight:CGFloat = 300
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

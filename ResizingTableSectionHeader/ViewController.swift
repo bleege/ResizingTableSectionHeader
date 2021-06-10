@@ -18,11 +18,11 @@ class ViewController: UIViewController {
         return view
     }()
     
-    let sectionHeader: UIView = {
-        let vc = DynamicHeightSectionHeader()
-        return vc.view
-    }()
-    
+    let sectionHeader = DynamicHeightSectionHeader()
+    var sectionHeaderView: UIView {
+        return sectionHeader.view
+    }
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -39,6 +39,31 @@ class ViewController: UIViewController {
         
     }
 
+    func toggleHeader() {
+
+        if sectionHeader.headerHeightConstraint.constant == sectionHeader.collapseHeight {
+            expandSectionHeader()
+        } else {
+            collapseSectionHeader()
+        }
+        
+    }
+    
+    func expandSectionHeader() {
+        
+        UIView.animate(withDuration: 1.0, animations: {
+            self.sectionHeader.headerHeightConstraint.constant = self.sectionHeader.expandedHeight
+            self.view.layoutIfNeeded()
+        })
+        
+    }
+    
+    func collapseSectionHeader() {
+        UIView.animate(withDuration: 0.5, animations: {
+            self.sectionHeader.headerHeightConstraint.constant = self.sectionHeader.collapseHeight
+            self.view.layoutIfNeeded()
+        })
+    }
 }
 
 extension ViewController: UITableViewDataSource {
@@ -60,12 +85,17 @@ extension ViewController: UITableViewDataSource {
 extension ViewController: UITableViewDelegate {
         
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        return sectionHeader
+        return sectionHeaderView
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        print("sectionHeader Height = \(sectionHeader.bounds.height); Width = \(sectionHeader.bounds.width)")
-        return sectionHeader.bounds.height
+        print("sectionHeader Height = \(sectionHeaderView.bounds.height); Width = \(sectionHeaderView.bounds.width)")
+        return sectionHeaderView.bounds.height
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("didSelectRowAt = \(indexPath.row)")
+        toggleHeader()
     }
     
 }
