@@ -9,11 +9,19 @@ import UIKit
 
 class DynamicHeightSectionHeader: UIViewController {
 
+    @IBOutlet weak var headerWidthConstraint: NSLayoutConstraint!
+    @IBOutlet weak var headerHeightConstraint: NSLayoutConstraint!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        print("viewDidLoad's headerHeightContstraint constant = \(headerHeightConstraint.constant)")
+        
+        let width = UIScreen.main.bounds.width
+        print("Screen width = \(width); Stock headerWidthConstraint = \(headerWidthConstraint.constant)")
+        headerWidthConstraint.constant = width
+        print("New headerWidthConstraint = \(headerWidthConstraint.constant)")
     }
-
 
 }

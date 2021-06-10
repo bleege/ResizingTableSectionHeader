@@ -64,6 +64,7 @@ extension ViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        print("sectionHeader Height = \(sectionHeader.bounds.height); Width = \(sectionHeader.bounds.width)")
         return sectionHeader.bounds.height
     }
     
