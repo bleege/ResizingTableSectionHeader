@@ -52,16 +52,20 @@ class ViewController: UIViewController {
     func expandSectionHeader() {
         
         UIView.animate(withDuration: 1.0, animations: {
+            self.tableView.beginUpdates()
             self.sectionHeader.headerHeightConstraint.constant = self.sectionHeader.expandedHeight
             self.view.layoutIfNeeded()
+            self.tableView.endUpdates()
         })
         
     }
     
     func collapseSectionHeader() {
         UIView.animate(withDuration: 0.5, animations: {
+            self.tableView.beginUpdates()
             self.sectionHeader.headerHeightConstraint.constant = self.sectionHeader.collapseHeight
             self.view.layoutIfNeeded()
+            self.tableView.endUpdates()
         })
     }
 }
