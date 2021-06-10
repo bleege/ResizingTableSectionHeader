@@ -9,8 +9,10 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    let tableView: UITableView = {
+    lazy var tableView: UITableView = {
         let view = UITableView()
+        view.dataSource = self
+        view.register(UINib(nibName: "BasicCell", bundle: .none), forCellReuseIdentifier: "basicCellId")
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -34,3 +36,18 @@ class ViewController: UIViewController {
 
 }
 
+extension ViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 3
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "basicCellId", for: indexPath) as? BasicCell else {
+            return UITableViewCell()
+        }
+        
+        cell.cellNumberLabel.text = String(indexPath.row)
+        return cell
+    }
+}

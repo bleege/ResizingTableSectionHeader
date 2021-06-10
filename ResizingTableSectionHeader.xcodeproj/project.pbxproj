@@ -13,6 +13,8 @@
 		A2CEE3522671A27300FC66ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2CEE3502671A27300FC66ED /* Main.storyboard */; };
 		A2CEE3542671A27500FC66ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2CEE3532671A27500FC66ED /* Assets.xcassets */; };
 		A2CEE3572671A27500FC66ED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2CEE3552671A27500FC66ED /* LaunchScreen.storyboard */; };
+		A2CEE3602671A4B400FC66ED /* BasicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CEE35E2671A4B400FC66ED /* BasicCell.swift */; };
+		A2CEE3612671A4B500FC66ED /* BasicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2CEE35F2671A4B400FC66ED /* BasicCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		A2CEE3532671A27500FC66ED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A2CEE3562671A27500FC66ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A2CEE3582671A27500FC66ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A2CEE35E2671A4B400FC66ED /* BasicCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicCell.swift; sourceTree = "<group>"; };
+		A2CEE35F2671A4B400FC66ED /* BasicCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BasicCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,8 @@
 				A2CEE3532671A27500FC66ED /* Assets.xcassets */,
 				A2CEE3552671A27500FC66ED /* LaunchScreen.storyboard */,
 				A2CEE3582671A27500FC66ED /* Info.plist */,
+				A2CEE35E2671A4B400FC66ED /* BasicCell.swift */,
+				A2CEE35F2671A4B400FC66ED /* BasicCell.xib */,
 			);
 			path = ResizingTableSectionHeader;
 			sourceTree = "<group>";
@@ -124,6 +130,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2CEE3612671A4B500FC66ED /* BasicCell.xib in Resources */,
 				A2CEE3572671A27500FC66ED /* LaunchScreen.storyboard in Resources */,
 				A2CEE3542671A27500FC66ED /* Assets.xcassets in Resources */,
 				A2CEE3522671A27300FC66ED /* Main.storyboard in Resources */,
@@ -137,6 +144,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2CEE3602671A4B400FC66ED /* BasicCell.swift in Sources */,
 				A2CEE34F2671A27300FC66ED /* ViewController.swift in Sources */,
 				A2CEE34B2671A27300FC66ED /* AppDelegate.swift in Sources */,
 				A2CEE34D2671A27300FC66ED /* SceneDelegate.swift in Sources */,
