@@ -12,11 +12,16 @@ class ViewController: UIViewController {
     lazy var tableView: UITableView = {
         let view = UITableView()
         view.dataSource = self
+        view.delegate = self
         view.register(UINib(nibName: "BasicCell", bundle: .none), forCellReuseIdentifier: "basicCellId")
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
+    let sectionHeader: UIView = {
+        let vc = DynamicHeightSectionHeader()
+        return vc.view
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,4 +55,12 @@ extension ViewController: UITableViewDataSource {
         cell.cellNumberLabel.text = String(indexPath.row)
         return cell
     }
+}
+
+extension ViewController: UITableViewDelegate {
+        
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        return sectionHeader
+    }
+    
 }
